@@ -1,4 +1,4 @@
-/* eslint-disable no-undef */
+/* eslint no-undef: "error" */
 const todoList = require('../todo');
 
 const {all, markAsComplete, add } = todoList();
@@ -9,7 +9,7 @@ describe("TodoList Test Suite", () => {
             {
                 title: "Test Todo",
                 completed: false,
-                dueDate: new Date().toLocalDateString("en-CA")
+                dueDate: new Date().toDateString("en-CA")
             }); 
     })
     test("Should add new todo", () => {
@@ -18,7 +18,7 @@ describe("TodoList Test Suite", () => {
             {
                 title: "Test Todo",
                 completed: false,
-                dueDate: new Date().toLocalDateString("en-CA"),
+                dueDate: new Date().toDateString("en-CA"),
             });
         expect(all.length).toBe(todoItemsCount + 1);
     });
